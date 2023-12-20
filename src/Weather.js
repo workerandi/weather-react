@@ -7,11 +7,15 @@ import React, { useState } from "react";
 
 export default function Weather() {
   const [ready, setReady] = useState(false);
-  const [temperature, setTemperature] = useState(null);
+  const [weatherData, setweatherData] = useState({});
 
-  function handleResponse() {
+  function handleResponse(response) {
     console.log(response.data);
-    setTemperature(response.data.main.temp);
+    setweatherData({
+      temperature: response.data.main.temp,
+      wind: response.data.main.wind.speed,
+    });
+    setReady(true);
   }
 
   if (ready) {
@@ -36,7 +40,7 @@ export default function Weather() {
             <div className="col">
               <div className="mainTemp row">
                 <div className="col-6">
-                  <h1 id="temperature">{temperature}</h1>
+                  <h1 id="temperature">{Math.round()}</h1>
                 </div>
                 <div className="col-6">
                   <div className="row">
