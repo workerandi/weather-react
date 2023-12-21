@@ -12,7 +12,12 @@ export default function Weather() {
   function handleResponse(response) {
     console.log(response.data);
     setweatherData({
+      date: "Wednesday Deecember 20th, 2023",
+      city: response.data.name,
+      description: response.data.weather[0].description,
+      icon: `./sun-regular.svg`,
       temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
       wind: response.data.main.wind.speed,
     });
     setReady(true);
@@ -24,11 +29,15 @@ export default function Weather() {
         <div className="container-fluid">
           <div className="row">
             <div className="col">
-              <h2 id="cityDisplayed">"Morelia"</h2>
+              <h2 id="cityDisplayed">{weatherData.city}</h2>
               <h2 id="currentTime">"adfa"</h2>
               <br />
-              <p id="description">"asdfad"</p>
-              <img id="icon" src="sun-regular.svg" alt="icon"></img>
+              <p id="description">{weatherData.description}</p>
+              <img
+                id="icon"
+                src={weatherData.icon}
+                alt={weatherData.description}
+              ></img>
 
               <form id="inputForm">
                 <input type="text" placeholder="Change City:" id="searchBar" />
@@ -40,7 +49,9 @@ export default function Weather() {
             <div className="col">
               <div className="mainTemp row">
                 <div className="col-6">
-                  <h1 id="temperature">{Math.round()}</h1>
+                  <h1 id="temperature">
+                    {Math.round(weatherData.temperature)}
+                  </h1>
                 </div>
                 <div className="col-6">
                   <div className="row">
@@ -60,10 +71,10 @@ export default function Weather() {
 
               <br />
               <p className="otherCurrentInfo" id="humidity">
-                43 %
+                {weatherData.humidity} %
               </p>
               <p className="otherCurrentInfo" id="windSpeed">
-                5 km/h
+                {weatherData.wind} km/h
               </p>
             </div>
           </div>
