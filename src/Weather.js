@@ -1,7 +1,7 @@
-import "./Weather.css";
-import FormattedDate from "./FormattedDate";
-import axios from "axios";
 import React, { useState } from "react";
+import axios from "axios";
+import FormattedDate from "./FormattedDate";
+import "./Weather.css";
 
 //import Forecast from "./Forecast";
 
@@ -9,7 +9,7 @@ export default function Weather(props) {
   const [weatherData, setweatherData] = useState({ ready: false });
 
   function handleResponse(response) {
-    console.log(response.data);
+    console.log(response);
     setweatherData({
       ready: true,
       date: new Date(response.data.dt * 1000),
@@ -29,10 +29,10 @@ export default function Weather(props) {
           <div className="row">
             <div className="col">
               <h2 id="cityDisplayed">{weatherData.city}</h2>
-              <h2 id="currentTime">
+              <h3 id="currentTime">
                 {" "}
-                <FormattedDate />
-              </h2>
+                <FormattedDate date={weatherData.date} />
+              </h3>
               <br />
               <p id="description">{weatherData.description}</p>
               <img
