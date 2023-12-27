@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FormattedDate from "./FormattedDate";
+import Leftside from "./Leftside.js";
+import Rightside from "./Rightside.js";
 import "./Weather.css";
 
 //import Forecast from "./Forecast";
@@ -28,56 +29,10 @@ export default function Weather(props) {
         <div className="container-fluid">
           <div className="row">
             <div className="col">
-              <h2 id="cityDisplayed">{weatherData.city}</h2>
-              <h3 id="currentTime">
-                {" "}
-                <FormattedDate date={weatherData.date} />
-              </h3>
-              <br />
-              <p id="description">{weatherData.description}</p>
-              <img
-                id="icon"
-                src={weatherData.icon}
-                alt={weatherData.description}
-              ></img>
-
-              <form id="inputForm">
-                <input type="text" placeholder="Change City:" id="searchBar" />
-                <button type="submit" id="searchButton">
-                  Search
-                </button>
-              </form>
+              <Leftside date={weatherData} />
             </div>
             <div className="col">
-              <div className="mainTemp row">
-                <div className="col-6">
-                  <h1 id="temperature">
-                    {Math.round(weatherData.temperature)}
-                  </h1>
-                </div>
-                <div className="col-6">
-                  <div className="row">
-                    <div className="col-2">
-                      <h1 className="units" id="cButton">
-                        °C
-                      </h1>
-                    </div>
-                    <div className="col-8">
-                      <h1 className="units" id="fButton">
-                        |°F
-                      </h1>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <br />
-              <p className="otherCurrentInfo" id="humidity">
-                {weatherData.humidity} %
-              </p>
-              <p className="otherCurrentInfo" id="windSpeed">
-                {Math.round(weatherData.wind)} km/h
-              </p>
+              <Rightside date={weatherData} />
             </div>
           </div>
           <div className="row"></div>
