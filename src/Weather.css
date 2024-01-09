@@ -19,6 +19,10 @@ input {
   outline-color: var(--font-color);
   border-radius: 10px;
 }
+input:focus {
+  background-color: var(--font-color);
+  color: var(--background-color);
+}
 
 a {
   color: var(--font-color);
@@ -33,7 +37,7 @@ a {
   margin: 100px auto;
   color: var(--font-color);
   border-color: var(--border-color);
-  border-style: ridge;
+  border-style: solid;
   border-width: 1px;
   border-radius: 10px;
   background-color: var(--background-color);
@@ -70,13 +74,15 @@ a {
   text-align: center;
 }
 #button {
-  padding: auto;
+  padding: 2px 10px;
   margin: 10px 0px;
-  border-radius: 35px;
+  border-radius: 10px;
 }
 #button:hover {
   transition: all 150ms ease-in-out;
-  background-color: var(--border-color);
+  background-color: var(--font-color);
+  color: var(--background-color);
+  border-color: var(--font-color);
 }
 #icon {
   background-color: var(--background-color);
