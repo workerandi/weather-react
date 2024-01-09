@@ -9,6 +9,7 @@ import "./Weather.css";
 export default function Weather(props) {
   const [weatherData, setweatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+
   function handleResponse(response) {
     setweatherData({
       ready: true,
@@ -25,7 +26,11 @@ export default function Weather(props) {
     event.preventDefault();
     //search 4 a city
   }
-  function handleCityChange(event) {}
+  function handleCityChange(event) {
+    setCity(event.target.value);
+    alert(city);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="WeatherApp">
@@ -43,9 +48,12 @@ export default function Weather(props) {
                 />
               </div>
               <div className="col-6">
-                <button type="submit" className="my-3" id="searchButton">
-                  Search
-                </button>
+                <input
+                  type="submit"
+                  className="my-3 button"
+                  id="button"
+                  value="Search"
+                ></input>
               </div>
             </div>
           </form>
