@@ -1,3 +1,9 @@
+:root {
+  --border-color: #7c907a;
+  --font-color: #33202a;
+  --background-color: #f7fcfe;
+}
+
 h1 {
   font-size: 150px;
   margin-bottom: 40px;
@@ -9,23 +15,24 @@ button {
   padding: auto;
   margin: 10px 0px;
   border-radius: 35px;
-  background-color: #f1fff1;
-  border-color: #c4f0c5;
-  color: #6a0000;
+  background-color: var(--background-color);
+  border-color: var(--border-color);
+  color: var(--font-color);
 }
 button:hover {
   transition: all 150ms ease-in-out;
-  background-color: #c4f0c5;
+  background-color: var(--border-color);
 }
 input {
-  background-color: #f1fff1;
-  border-color: #c4f0c5;
-  color: #6a0000;
-  margin-top: 20px;
-  width: 300px;
+  background-color: var(--background-color);
+  border-color: var(--border-color);
+  color: var(--font-color);
+  outline-color: var(--font-color);
+  border-radius: 10px;
 }
+
 a {
-  color: #6a0000;
+  color: var(--font-color);
   text-decoration: none;
   font-family: monospace;
   margin-left: 430px;
@@ -35,19 +42,19 @@ a {
   font-family: monospace;
   max-width: 750px;
   margin: 100px auto;
-  color: #6a0000;
-  border-color: #c4f0c5;
+  color: var(--font-color);
+  border-color: var(--border-color);
   border-style: ridge;
   border-width: 1px;
   border-radius: 10px;
-  background-color: #f1fff1;
+  background-color: var(--background-color);
   padding: 30px;
   box-shadow: 1px 1px 50px #b1b1b1;
 }
 .otherCurrentInfo {
   text-align: center;
   margin-left: 30px;
-  border-color: #c4f0c5;
+  border-color: var(--border-color);
   border-style: ridge;
   border-width: 1px;
 }
@@ -61,24 +68,24 @@ a {
 .forecast {
   margin: auto;
   text-align: center;
-  border-color: #c4f0c5;
+  border-color: var(--border-color);
   border-style: ridge;
   border-width: 1px;
   padding: 12px;
 }
 .forecastIcons {
-  background-color: #f1fff1;
+  background-color: var(--background-color);
   width: 30px;
   margin: 20px auto;
   text-align: center;
 }
 
 #icon {
-  background-color: #f1fff1;
+  background-color: var(--background-color);
   width: 60px;
   margin: 40px auto;
   text-align: center;
-  border-color: #c4f0c5;
+  border-color: var(--border-color);
   border-style: ridge;
   border-width: 1px;
 }
