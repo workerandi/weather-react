@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function Leftside(props) {
   return (
@@ -17,25 +17,7 @@ export default function Leftside(props) {
         <img id="icon" src={props.data.icon} alt={props.data.description}></img>
       </div>
       <div className="Rightside col">
-        <div className="mainTemp row">
-          <div className="col-6 ">
-            <h1 id="temperature">{Math.round(props.data.temperature)}</h1>
-          </div>
-          <div className="col-6">
-            <div className="row">
-              <div className="col-4">
-                <h1 className="units" id="cButton">
-                  °C
-                </h1>
-              </div>
-              <div className="col-8">
-                <h1 className="units" id="fButton">
-                  |°F
-                </h1>
-              </div>
-            </div>
-          </div>
-        </div>
+        <WeatherTemperature celsius={props.data.temperature} />
         <br />
         <p className="otherCurrentInfo" id="humidity">
           {props.data.humidity} %
