@@ -63,11 +63,12 @@ a {
   border-style: ridge;
   border-width: 1px;
   padding: 12px;
+  border-radius: 10px;
 }
 .forecastIcons {
   background-color: var(--background-color);
-  width: 30px;
-  margin: 20px auto;
+  width: 75px;
+  margin: auto;
   text-align: center;
 }
 #button {
