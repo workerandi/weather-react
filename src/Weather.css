@@ -23,12 +23,10 @@ input:focus {
   background-color: var(--font-color);
   color: var(--background-color);
 }
-
 a {
   color: var(--font-color);
   text-decoration: none;
   font-family: monospace;
-  margin-left: 430px;
 }
 
 .container-fluid {
