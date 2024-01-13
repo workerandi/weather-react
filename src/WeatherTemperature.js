@@ -18,38 +18,31 @@ export default function MainTemperature(props) {
   if (unit === "celsius") {
     return (
       <div className="mainTemp row">
-        <div className="col-6 ">
-          <h1 id="temperature">{Math.round(props.celsius)}</h1>
+        <div className="col-sm-6 ">
+          <h1 className="m-0">{Math.round(props.celsius)}</h1>
         </div>
-        <div className="col-6">
-          <div className="row">
-            <h1 className="units">
-              {" "}
-              °C |
-              <a href="/" onClick={convert2Farenheit}>
-                °F
-              </a>
-            </h1>
-          </div>
+
+        <div className="col-sm-6 ">
+          <h1 className="units ps-5 pt-5m-0">
+            <a href="/" onClick={convert2Farenheit}>
+              °C
+            </a>
+          </h1>
         </div>
       </div>
     );
   } else {
     return (
       <div className="mainTemp row">
-        <div className="col-6 ">
-          <h1 id="temperature">{Math.round(farenheit())}</h1>
+        <div className="col-sm-6 ">
+          <h1 className="m-0">{Math.round(farenheit())}</h1>
         </div>
-        <div className="col-6">
-          <div className="row">
-            <h1 className="units">
-              {" "}
-              <a href="/" onClick={convert2Celsius}>
-                °C
-              </a>{" "}
-              |°F
-            </h1>
-          </div>
+        <div className="col-sm-6">
+          <h1 className="units ps-5 pt-5 m-0">
+            <a href="/" onClick={convert2Celsius}>
+              °F
+            </a>
+          </h1>
         </div>
       </div>
     );

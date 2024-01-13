@@ -31,11 +31,11 @@ a {
 
 .container-fluid {
   font-family: monospace;
-  max-width: 750px;
+  max-width: 800px;
   margin: 100px auto;
   color: var(--font-color);
   border-color: var(--border-color);
-  border-style: solid;
+  border-style: ridge;
   border-width: 1px;
   border-radius: 10px;
   background-color: var(--background-color);
@@ -54,6 +54,7 @@ a {
   font-size: 30px;
   margin: 40px auto;
   cursor: default;
+  text-align: center;
 }
 
 .forecast {
@@ -83,10 +84,11 @@ a {
   border-color: var(--font-color);
 }
 #icon {
-  background-color: var(--background-color);
+  background-color: var(--border-color);
   width: 100px;
   margin: 50px auto;
   text-align: center;
   border: 1px ridge var(--border-color);
   border-radius: 10px;
+  box-shadow: 1px 1px 50px var(--background-color);
 }

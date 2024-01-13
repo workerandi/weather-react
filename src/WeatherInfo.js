@@ -19,6 +19,7 @@ export default function Leftside(props) {
       <div className="Rightside col">
         <WeatherTemperature celsius={props.data.temperature} />
         <br />
+
         <p className="otherCurrentInfo" id="humidity">
           {props.data.humidity} %
         </p>
