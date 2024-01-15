@@ -21,6 +21,7 @@ export default function Weather(props) {
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
+      coord: response.data.coord,
     });
   }
 
@@ -65,7 +66,7 @@ export default function Weather(props) {
             </div>
           </form>
           <WeatherInfo data={weatherData} />
-          <Forecast icon={iconURL} />
+          <Forecast icon={iconURL} coord={weatherData.coord} />
         </div>
         <br />
         <a href="https://github.com/workerandi/weather-react.git">
