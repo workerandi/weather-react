@@ -7,17 +7,14 @@ import "./Weather.css";
 export default function Weather(props) {
   const [weatherData, setweatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
-  const [iconURL, setIconURL] = useState("");
 
   function handleResponse(response) {
-    const newIconURL = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
-    setIconURL(newIconURL);
     setweatherData({
       ready: true,
       date: new Date(response.data.dt * 1000),
       city: response.data.name,
       description: response.data.weather[0].description,
-      icon: newIconURL,
+      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
@@ -66,7 +63,7 @@ export default function Weather(props) {
             </div>
           </form>
           <WeatherInfo data={weatherData} />
-          <Forecast icon={iconURL} coord={weatherData.coord} />
+          <Forecast coord={weatherData.coord} />
         </div>
         <br />
         <a href="https://github.com/workerandi/weather-react.git">
